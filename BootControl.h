@@ -17,6 +17,7 @@
 #pragma once
 
 #include <android/hardware/boot/1.2/IBootControl.h>
+#include <hidl/HidlSupport.h>
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
 
