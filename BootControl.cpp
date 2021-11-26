@@ -155,7 +155,7 @@ static bool DevInfoSync() {
 static void DevInfoInitSlot(devinfo_ab_slot_data_t &slot_data) {
     slot_data.retry_count = AB_ATTR_MAX_RETRY_COUNT;
     slot_data.unbootable = 0;
-    slot_data.successful = 0;
+    slot_data.successful = 1;
     slot_data.active = 1;
     slot_data.fastboot_ok = 0;
 }
@@ -243,7 +243,7 @@ Return<void> BootControl::setActiveBootSlot(uint32_t slot, setActiveBootSlot_cb 
 
         // update attributes for active and inactive
         inactive_entry->attr &= ~AB_ATTR_ACTIVE;
-        active_entry->attr = AB_ATTR_ACTIVE | (AB_ATTR_MAX_PRIORITY << AB_ATTR_PRIORITY_SHIFT) |
+        active_entry->attr = AB_ATTR_ACTIVE | AB_ATTR_SUCCESSFUL | (AB_ATTR_MAX_PRIORITY << AB_ATTR_PRIORITY_SHIFT) |
                              (AB_ATTR_MAX_RETRY_COUNT << AB_ATTR_RETRY_COUNT_SHIFT);
     }
 
