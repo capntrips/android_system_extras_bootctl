@@ -37,6 +37,11 @@ using ::android::hardware::Void;
 struct BootControl : public IBootControl {
     bool Init();
 
+    using markBootSuccessful_cb = std::function<void(const CommandResult& error)>;
+    using setActiveBootSlot_cb = std::function<void(const CommandResult& error)>;
+    using setSlotAsUnbootable_cb = std::function<void(const CommandResult& error)>;
+    using getSuffix_cb = std::function<void(const ::android::hardware::hidl_string& slotSuffix)>;
+
     // Methods from ::android::hardware::boot::V1_0::IBootControl follow.
     Return<uint32_t> getNumberSlots() override;
     Return<uint32_t> getCurrentSlot() override;
