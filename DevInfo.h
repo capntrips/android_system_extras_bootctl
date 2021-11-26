@@ -16,12 +16,6 @@
 
 #pragma once
 
-namespace android {
-namespace hardware {
-namespace boot {
-namespace V1_2 {
-namespace implementation {
-
 //
 // definitions taken from ABL code
 //
@@ -53,9 +47,3 @@ struct devinfo_t {
 } __attribute__((packed));
 
 static_assert(sizeof(devinfo_t) == 128, "invalid devinfo struct size");
-
-}  // namespace implementation
-}  // namespace V1_2
-}  // namespace boot
-}  // namespace hardware
-}  // namespace android

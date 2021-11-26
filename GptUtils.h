@@ -20,12 +20,6 @@
 #include <string>
 #include <vector>
 
-namespace android {
-namespace hardware {
-namespace boot {
-namespace V1_2 {
-namespace implementation {
-
 #define GPT_SIGNATURE 0x5452415020494645UL
 
 typedef struct {
@@ -71,9 +65,3 @@ class GptUtils {
     std::vector<gpt_entry> entry_array;
     std::map<std::string, gpt_entry *> entries;
 };
-
-}  // namespace implementation
-}  // namespace V1_2
-}  // namespace boot
-}  // namespace hardware
-}  // namespace android

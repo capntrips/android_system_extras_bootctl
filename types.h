@@ -14,7 +14,8 @@
  * limitations under the License.
  */
 
-package android.hardware.boot@1.0;
+#include <string>
+#include <cstdint>
 
 /**
  * A command result encapsulating whether the command succeeded and
@@ -22,7 +23,7 @@ package android.hardware.boot@1.0;
  */
 struct CommandResult {
     bool success;
-    string errMsg;
+    std::string errMsg;
 };
 
 /**

@@ -19,7 +19,7 @@ license {
 
 cc_binary {
     name: "bootctl",
-    srcs: ["bootctl.cpp"],
+    srcs: ["bootctl.cpp", "BootControl.cpp", "GptUtils.cpp"],
 
     cflags: [
         "-Wall",
@@ -27,9 +27,11 @@ cc_binary {
     ],
 
     shared_libs: [
-        "android.hardware.boot@1.0",
-        "android.hardware.boot@1.1",
-        "android.hardware.boot@1.2",
+        "libbase",
+        "liblog",
+        "libcutils",
+        "libbootloader_message",
+        "libz",
         "libhidlbase",
         "libutils",
     ],

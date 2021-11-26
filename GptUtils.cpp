@@ -24,12 +24,6 @@
 #include <log/log.h>
 #include <zlib.h>
 
-namespace android {
-namespace hardware {
-namespace boot {
-namespace V1_2 {
-namespace implementation {
-
 namespace {
 
 static int ValidateGptHeader(gpt_header *gpt) {
@@ -185,9 +179,3 @@ GptUtils::~GptUtils() {
         close(fd);
     }
 }
-
-}  // namespace implementation
-}  // namespace V1_2
-}  // namespace boot
-}  // namespace hardware
-}  // namespace android
