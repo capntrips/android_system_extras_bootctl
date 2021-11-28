@@ -26,10 +26,14 @@ cc_binary {
         "-Werror",
     ],
 
-    shared_libs: [
+    static_libs: [
         "android.hardware.boot@1.0",
         "android.hardware.boot@1.1",
         "android.hardware.boot@1.2",
+    ],
+    shared_libs: [
+        "liblog",
+        "libcutils",
         "libhidlbase",
         "libutils",
     ],
